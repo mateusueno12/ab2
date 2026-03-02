@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de CEP - Busque CEP por Endereço</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-map-search"></i> Buscador de CEP</h1>
+            <p>Encontre o CEP informando o endereço completo</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <form id="cepForm">
+                    <div class="input-group">
+                        <label for="logradouro"><i class="fas fa-road"></i> Logradouro (Rua/Avenida):</label>
+                        <input type="text" id="logradouro" placeholder="Digite o nome da rua, avenida ou praça" required>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="cidade"><i class="fas fa-city"></i> Cidade:</label>
+                            <input type="text" id="cidade" placeholder="Digite a cidade" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="estado"><i class="fas fa-map"></i> Estado (UF):</label>
+                            <select id="estado" required>
+                                <option value="">Selecione o estado</option>
+                                <option value="AC">Acre (AC)</option>
+                                <option value="AL">Alagoas (AL)</option>
+                                <option value="AP">Amapá (AP)</option>
+                                <option value="AM">Amazonas (AM)</option>
+                                <option value="BA">Bahia (BA)</option>
+                                <option value="CE">Ceará (CE)</option>
+                                <option value="DF">Distrito Federal (DF)</option>
+                                <option value="ES">Espírito Santo (ES)</option>
+                                <option value="GO">Goiás (GO)</option>
+                                <option value="MA">Maranhão (MA)</option>
+                                <option value="MT">Mato Grosso (MT)</option>
+                                <option value="MS">Mato Grosso do Sul (MS)</option>
+                                <option value="MG">Minas Gerais (MG)</option>
+                                <option value="PA">Pará (PA)</option>
+                                <option value="PB">Paraíba (PB)</option>
+                                <option value="PR">Paraná (PR)</option>
+                                <option value="PE">Pernambuco (PE)</option>
+                                <option value="PI">Piauí (PI)</option>
+                                <option value="RJ">Rio de Janeiro (RJ)</option>
+                                <option value="RN">Rio Grande do Norte (RN)</option>
+                                <option value="RS">Rio Grande do Sul (RS)</option>
+                                <option value="RO">Rondônia (RO)</option>
+                                <option value="RR">Roraima (RR)</option>
+                                <option value="SC">Santa Catarina (SC)</option>
+                                <option value="SP">São Paulo (SP)</option>
+                                <option value="SE">Sergipe (SE)</option>
+                                <option value="TO">Tocantins (TO)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="searchBtn">
+                        <i class="fas fa-search"></i> Buscar CEP
+                    </button>
+                </form>
+            </div>
+
+            <div class="results-box" id="resultsBox" style="display: none;">
+                <h2><i class="fas fa-check-circle"></i> Resultado da Busca</h2>
+                
+                <div class="results-content" id="resultsContent">
+                    <!-- Resultados serão inseridos aqui via JavaScript -->
+                </div>
+
+                <div class="results-actions">
+                    <button id="newSearchBtn" class="secondary-btn">
+                        <i class="fas fa-redo-alt"></i> Nova Busca
+                    </button>
+                </div>
+            </div>
+
+            <div class="error-box" id="errorBox" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="errorMessage"></p>
+                <button id="tryAgainBtn" class="secondary-btn">Tentar Novamente</button>
+            </div>
+
+            <div class="loading-box" id="loadingBox" style="display: none;">
+                <div class="spinner"></div>
+                <p>Buscando CEP...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Desenvolvido para atividade de programação - Busca de CEP por endereço</p>
+            <p class="api-info"><i class="fas fa-info-circle"></i> Utilizando API ViaCEP</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
